@@ -79,20 +79,6 @@
   </url>
   
   <url>
-    <loc>https://yaoxinxionic.github.io/tags/hexo/</loc>
-    <lastmod>2024-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yaoxinxionic.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2024-07-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yaoxinxionic.github.io/tags/%E9%9B%84%E5%AE%89/</loc>
     <lastmod>2024-07-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -101,6 +87,20 @@
   
   <url>
     <loc>https://yaoxinxionic.github.io/tags/%E5%8F%8D%E5%90%91%E5%87%BA%E8%A1%8C/</loc>
+    <lastmod>2024-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yaoxinxionic.github.io/tags/hexo/</loc>
+    <lastmod>2024-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yaoxinxionic.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -130,14 +130,14 @@
   </url>
   
   <url>
-    <loc>https://yaoxinxionic.github.io/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/</loc>
+    <loc>https://yaoxinxionic.github.io/categories/citywalk/</loc>
     <lastmod>2024-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yaoxinxionic.github.io/categories/citywalk/</loc>
+    <loc>https://yaoxinxionic.github.io/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/</loc>
     <lastmod>2024-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
