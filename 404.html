@@ -65,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yaoxinxionic.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":["home","post"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"tEhdURKH1Kl3zr3pRU8K3O2D-gzGzoHsz","app_key":"T8mmCI7F7csKyeeyMv3zhXDp","server_url":"https://tehdurkh.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"yaoxinxionic.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":100,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"tEhdURKH1Kl3zr3pRU8K3O2D-gzGzoHsz","app_key":"T8mmCI7F7csKyeeyMv3zhXDp","server_url":"https://tehdurkh.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -336,7 +336,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/shuoshuo" target="_self">
+              <a class="nav-link" href="/shuoshuo/" target="_self">
                 <i class="iconfont icon-note"></i>
                 <span>说说</span>
               </a>
@@ -348,10 +348,50 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/travel" target="_self">
+              <a class="nav-link" href="/travel/" target="_self">
                 <i class="iconfont icon-map "></i>
                 <span>足迹</span>
               </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                <span>游戏</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/game/wzq/" target="_self">
+                    <i class="iconfont icon-codepen-fill"></i>
+                    <span>五子棋</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/game/mf/" target="_self">
+                    <i class="iconfont icon-medium-fill"></i>
+                    <span>魔方</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/game/sl/" target="_self">
+                    <i class="iconfont icon-skype-fill"></i>
+                    <span>扫雷</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -384,7 +424,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">页面不存在</span>
+            <span id="subtitle" data-typed-text="页面不存在"></span>
           
         </div>
 
@@ -539,6 +579,21 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
 
 
 
