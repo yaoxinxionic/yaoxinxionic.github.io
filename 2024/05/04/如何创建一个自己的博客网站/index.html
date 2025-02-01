@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yaoxinxionic.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.前言 我相信看这篇文章的大多数人肯定都是通过朋友圈或者qq空间来记录生活的，如果想要写长一点的blog可能会用知乎或者csdn，但是这么做也有一定的弊端，你总会受到各种限制。比如朋友圈最多只能发9张图片，还不能发原图，csdn上有各种广告，所以说有自己的一个网站来写博客就很nice了，想怎么写就怎么写。于是我就利用五一假期的时间创建了一个基于hexo+githubpages的博客，而这篇文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何创建一个自己的博客网站">
+<meta property="og:url" content="https://yaoxinxionic.github.io/2024/05/04/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="xinの博客">
+<meta property="og:description" content="1.前言 我相信看这篇文章的大多数人肯定都是通过朋友圈或者qq空间来记录生活的，如果想要写长一点的blog可能会用知乎或者csdn，但是这么做也有一定的弊端，你总会受到各种限制。比如朋友圈最多只能发9张图片，还不能发原图，csdn上有各种广告，所以说有自己的一个网站来写博客就很nice了，想怎么写就怎么写。于是我就利用五一假期的时间创建了一个基于hexo+githubpages的博客，而这篇文章">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-30T07:41:21.831Z">
+<meta property="article:author" content="新一">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="个人博客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://yaoxinxionic.github.io/2024/05/04/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>如何创建一个自己的博客网站 | xinの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="xinの博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">xinの博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description"> </p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-traval">
+
+    <a href="/travel/" rel="section"><i class="fa fa-globe fa-fw"></i>traval</a>
+
+  </li>
+        <li class="menu-item menu-item-说说">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-fish fa-fw"></i>说说</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yaoxinxionic.github.io/2024/05/04/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="新一">
+      <meta itemprop="description" content="山高路远，欢迎常来玩呀！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xinの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何创建一个自己的博客网站
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-05-04 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-04T00:00:00+08:00">2024-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-01-30 15:41:21" itemprop="dateModified" datetime="2025-01-30T15:41:21+08:00">2025-01-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9E%8E%E6%8A%98%E8%85%BE/" itemprop="url" rel="index"><span itemprop="name">瞎折腾</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1前言"><a class="markdownIt-Anchor" href="#1前言"></a> 1.前言</h1>
+<p>我相信看这篇文章的大多数人肯定都是通过朋友圈或者qq空间来记录生活的，如果想要写长一点的blog可能会用知乎或者csdn，但是这么做也有一定的弊端，你总会受到各种限制。比如朋友圈最多只能发9张图片，还不能发原图，csdn上有各种广告，所以说有自己的一个网站来写博客就很nice了，想怎么写就怎么写。于是我就利用五一假期的时间创建了一个基于hexo+githubpages的博客，而这篇文章也将作为我的第一篇建站文章！也欢迎大家来我的个人网站：<a href="https://yaoxinxionic.github.io/">xin的博客</a>(日后肯定会慢慢更新内容的）</p>
+<span id="more"></span>
+<h1 id="2探索"><a class="markdownIt-Anchor" href="#2探索"></a> 2.探索</h1>
+<blockquote>
+<p>探索过程大致可以分为三步：<em><strong>选择合适的框架，选择喜欢的主题，开始写blog。</strong></em></p>
+</blockquote>
+<h3 id="选择合适的框架"><a class="markdownIt-Anchor" href="#选择合适的框架"></a> 选择合适的框架</h3>
+<p>目前主流的方法主要有以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo</td>
+<td>可以不买服务器和域名；使用人数多，遇到问题好解决；主题丰富</td>
+<td>配置非常麻烦，需要备份</td>
+</tr>
+<tr>
+<td>hugo</td>
+<td>也可以零成本实现；用Go语言写的，渲染快</td>
+<td>使用人数较少，主题也比较少</td>
+</tr>
+<tr>
+<td>typecho</td>
+<td>简洁轻量，配置非常简单,适合单纯想写博客的</td>
+<td>需要买服务器和域名(买国内的服务器还需要备案)</td>
+</tr>
+<tr>
+<td>wordpress</td>
+<td>使用人数多，遇到问题好解决；生态丰富，插件多</td>
+<td>非常臃肿，需要你有一定的网站优化能力</td>
+</tr>
+<tr>
+<td>jekyll</td>
+<td>不需要在本地写完再deploy,可以直接在github上写</td>
+<td>文章开头的那些设置不能自动生成</td>
+</tr>
+</tbody>
+</table>
+<p>如果你看完上面这个表格还不知道怎么选，可以看一下这个视频： <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cv411N7kz/?spm_id_from=333.999.0.0&amp;vd_source=4fa124ae950952f4261fa23b23c794cf">搭博客到底选什么框架？Hexo还是Hugo？Typecho还是Wordpress？</a><br />
+<em><strong>其实选择哪种并不重要，选择一个比较适合自己的就好，我看网上许多人都是从一个换到另一个，重要的是内容输出。</strong></em><br />
+其实一开始我想用Typecho的，但是因为要买服务器和域名，就放弃了，选择了hexo。</p>
+<h3 id="选择喜欢的主题"><a class="markdownIt-Anchor" href="#选择喜欢的主题"></a> 选择喜欢的主题</h3>
+<p>hexo的主题样式非常多，目前最受欢迎的应该是<strong>butterfly</strong>,我也试了一下这个，感觉配置还是不太方便，于是我又转到了<strong>fluid</strong>,这个感觉作者之前的一些配置就很好了，基本就修改一下个人信息，在稍微魔改一下就行。如果你也选择了hexo,那么<strong>fluid</strong>绝对是一个很好的选择！</p>
+<h3 id="开始写blog"><a class="markdownIt-Anchor" href="#开始写blog"></a> 开始写blog</h3>
+<p>如果你还在纠结选那种框架或者那个主题的话，那我只能告诉你：“快别选了，抓紧写吧”，主题什么的可以日后再改嘛，好的灵感可不能再现。<br />
+我目前的打算是先用csdn的MD编辑器写好，然后导出到本地，然后找到这个md文件，把它复制到hexo博客文件夹 中 source 下的 _posts 中，默认只有一个 <a target="_blank" rel="noopener" href="http://hello-world.md">hello-world.md</a>；复制完之后然后使用文本编辑器打开它，在第一行加上title，内容自定，如：</p>
+<blockquote>
+<p><strong><code>title: this is my first blog</code></strong></p>
+</blockquote>
+<p>然后就是hexo g生成，hexo s本地预览，hexo d上传到github大功告成！！！</p>
+<h1 id="3总结"><a class="markdownIt-Anchor" href="#3总结"></a> 3.总结</h1>
+<p>虽然这篇文章内容很少，但是创建博客确实花费了我不少时间，现在回过头看，在修改某个文件的时候最好备份一下，不然改错了就很麻烦；不要过于看重主题，开始的时候可以用默认的。如果你也有创建自己博客的想法，那就抓紧行动起来吧！</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>Buy me a coffee!</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="新一 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># 个人博客</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/05/29/b%E7%AB%99%E5%A4%A7%E5%AD%A6%E7%B3%BB%E5%88%97%E4%B9%8B%E7%BA%BF%E4%BB%A3%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93/" rel="next" title="b站大学系列之线代学习小结">
+      b站大学系列之线代学习小结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text"> 1.前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E6%8E%A2%E7%B4%A2"><span class="nav-number">2.</span> <span class="nav-text"> 2.探索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.0.1.</span> <span class="nav-text"> 选择合适的框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%BB%E9%A2%98"><span class="nav-number">2.0.2.</span> <span class="nav-text"> 选择喜欢的主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E5%86%99blog"><span class="nav-number">2.0.3.</span> <span class="nav-text"> 开始写blog</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text"> 3.总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="新一"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">新一</p>
+  <div class="site-description" itemprop="description">山高路远，欢迎常来玩呀！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:xinyao@tju.edu.cn" title="E-Mail → mailto:xinyao@tju.edu.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1407960694?spm_id_from=333.1007.0.0" title="b站 → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1407960694?spm_id_from&#x3D;333.1007.0.0" rel="noopener" target="_blank"><i class="fab fa-bilibili fa-fw"></i>b站</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">新一</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">14k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数 &asymp;</span>
+    <span title="站点阅读时长">24 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
